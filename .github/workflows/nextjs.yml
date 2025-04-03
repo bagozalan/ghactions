@@ -4,6 +4,11 @@ on:
   workflow_run:
     workflows: ["Hello world"]
     types: [success]
+
+permissions:
+  actions: read
+  contents: read
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
