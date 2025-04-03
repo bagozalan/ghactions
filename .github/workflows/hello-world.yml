@@ -5,8 +5,7 @@ name: Hello world
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
+  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -27,3 +26,7 @@ jobs:
         run: |
           echo "$(cat hello/hello_world.txt)"
           echo test, and deploy your project.
+          echo "$(date)"
+          echo "The value of VARIABLE is ${{ secrets.VARIABLE }}"
+          echo "The value of VARIABLE is ${{ VARS.TEST }}"
+
